@@ -1,1 +1,1 @@
-# EmailAddressScanner
+# Email Address Scanner
