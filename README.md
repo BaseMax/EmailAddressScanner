@@ -2,6 +2,13 @@
 
 Email Address Scanner is a free and useful service to detect email address then really exists or not. 
 
+## Sample
+
+**spam_4s5d6f4sd56fs4d56fs4d5f6sdf456s4df56sf4d65sd4f65@gmail.com**
+
+The format of this email is correct.
+But because this email does not exist, it should recognize it.
+
 ## Using
 
 The service will soon be available on the Internet.
