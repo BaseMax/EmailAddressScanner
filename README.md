@@ -43,6 +43,15 @@ It was also tested with **C** technologies.
 Trying ***.201.***.245...
 ```
 
+**$ telnet**
+```
+telnet> open mx.checker.in
+Trying 195.201.39.245...
+telnet: connect to address 195.201.39.245: Connection refused
+telnet: Unable to connect to remote host
+telnet>
+```
+
 -------
 
 ## Useful Resources
