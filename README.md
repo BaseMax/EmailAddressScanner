@@ -51,3 +51,5 @@ Trying ***.201.***.245...
 - https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol
 - https://en.wikipedia.org/wiki/MX_record
 - https://www.speedguide.net/port.php?port=25
+- http://ibgwww.colorado.edu/~lessem/psyc5112/usail/man/linux/telnet.1.html
+- https://www.freebsd.org/cgi/man.cgi?query=telnet&apropos=0&sektion=0&manpath=SunOS+5.9&format=html
