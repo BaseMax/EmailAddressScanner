@@ -28,7 +28,7 @@ We will publish the URL. (SOON)
  * Vue Resource v1.5.1 (Removed)
 
 **`Web Server`**
- * Nginx 1.14.2
+ * Nginx 1.15.10
  * Jan
 
 **`Database`**
