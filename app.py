@@ -22,7 +22,6 @@ class flaskLocal(Flask):
 
 app = flaskLocal(__name__)
 
-
 #app.config.SERVER_NAME = 'asrez.base:80'
 #app.config
 
@@ -43,3 +42,36 @@ def about():
 	return 'The about page'
 # doc_count = col.count_documents(filter, skip=skip)
 # results = col.find(filter).sort(sort).skip(skip).limit(limit)
+
+@app.route('/scanmail/', methods=['GET','POST'], defaults={'email':None})
+@app.route('/scanmail/<string:email>/',methods=['GET'])
+def scanmail(email):
+	mainSite="http://asrez.base/"
+	site="http://asrez.base/scanmail/"
+	if email == None or email == '':
+		if request.method == "GET":
+			return render_template('scanmail_index.html', method=request.method, random=uuid.uuid4().hex.upper()[0:7].lower(), site=site, mainSite=mainSite)
+		else:
+			email=request.form.get("email")
+			if email:
+				exists = validate_email(email)
+				if exists == True:
+					message="Exists!"
+					status=True
+					return render_template('scanmail_index.html', message=message, method=request.method, email=email, status=status, site=site, mainSite=mainSite)
+				elif exists == False:
+					status=False
+					message="Not Exits!"
+					return render_template('scanmail_index.html', message=message, method=request.method, email=email, status=status, site=site, mainSite=mainSite)
+				else:
+					status=False
+					message="Not Sure!"
+					return render_template('scanmail_index.html', message=message, method=request.method, email=email, status=status, site=site, mainSite=mainSite)
+			else:
+				status=False
+				message="Values not enough!"
+				return render_template('scanmail_index.html', message=message, method=request.method, email=email, status=status, site=site, mainSite=mainSite)
+	elif email == "api":
+		return render_template('scanmail_api.html', site=site, mainSite=mainSite)
+	else:
+		return "Error!"
