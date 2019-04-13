@@ -75,3 +75,9 @@ def scanmail(email):
 		return render_template('scanmail_api.html', site=site, mainSite=mainSite)
 	else:
 		return "Error!"
+
+if __name__ == '__main__':
+	connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
+	collectionLink = connection[DB_NAME][COLLECTION_LINK]
+	# app.run(host='asrez.com', port=80, debug=False)
+	app.run(port=80)
